@@ -1,6 +1,6 @@
 A demo of a Single Page Web App with fallback and a jPlayer based player and playlist.
 
-This demo allows uninterrupted playback of audio while navigating the site, also a static version of the site is available for non-JS enabled agents such as search engines, with minimal code and content repetition.
+This demo allows uninterrupted playback of audio throughout the site. A static version of the site is available for non-JS enabled agents such as search engines, with minimal code and content repetition.
               
 More Info
 ---------
