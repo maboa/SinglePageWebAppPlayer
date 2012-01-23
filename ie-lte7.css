@@ -1,0 +1,39 @@
+/* ie-lte7.css */
+/*
+ * DEMO for jPlayer Single Page App
+ * http://www.happyworm.com/jquery/jplayer
+ *
+ * Author: Silvia Benvenuti
+ * Version: 0.1
+ * Date: 15th June 2010
+ */
+
+/* this is for IE6 */
+#clearPlayList, #shufflePlayList {
+	margin: -46px 0 0 0;
+}
+
+
+/* this is for other IEs */
+h2>#clearPlayList, h2>#shufflePlayList {
+	margin: -18px 0 -10px 0;
+}
+
+h2 {
+	background: url('graphics/arrow.gif') 11.2em 7px no-repeat;
+	overflow:hidden;
+}
+
+.track {
+	width: 320px;
+}
+
+.tabNavigation{
+	padding-bottom:0;
+	margin-bottom:0;
+}
+
+.tabNavigation li {
+	padding-bottom:6px;
+}
+

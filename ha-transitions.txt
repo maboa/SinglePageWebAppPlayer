@@ -1,0 +1,23 @@
+TRANSITIONS
+
+AUDIO 
+
+[crossfade over 2 seconds]
+[crossfade 1 sec (default)]
+[fadeout over 2 seconds]
+[fadein ]
+[pause 2 sec (default)]     
+
+[overlap over 5 secs]    
+[volume 5]
+
+[background score file.mp3 volume 5]
+
+VIDEO
+
+[dissolve over 2 seconds]
+[wipe from left to right over 3 seconds]
+[wipe from top to bottom over 3 seconds]
+[split screen] ?
+
+

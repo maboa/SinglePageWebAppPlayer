@@ -1,0 +1,10 @@
+h2 {
+	font-size: 100%;
+	background:url("graphics/arrow.gif") no-repeat scroll 12em 7px transparent;
+	margin:0;
+}
+
+.tabNavigation h2 {
+	font-size:100%;
+}
+

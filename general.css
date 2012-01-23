@@ -1,0 +1,343 @@
+/*
+ * DEMO for jPlayer Single Page App
+ * http://www.happyworm.com/jquery/jplayer/labs/demos/swp/
+ *
+ * Author: Silvia Benvenuti
+ * Version: 0.1
+ * Date: 15th June 2010
+ */
+
+/* @group RESET */
+
+/* 	css reset 
+	by eric meyer http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* @end */
+
+body {
+	margin: 20px auto;
+	font: .86em/1.4 Tahoma, Verdana, "Sans Serif"
+}
+
+#page {
+	width: 956px;
+	margin: 0 auto;
+	padding: 0 10px;
+	overflow:hidden;
+}
+
+#footer {
+	width: 976px;
+	margin: 40px auto 0 auto;
+	padding: 10px;
+	overflow:hidden;
+	border-top: 1px dotted #c2d3df;
+	color: #666;
+	font-size:90%;
+}
+
+#footer a {
+	color: #019be3;
+	text-decoration:none;
+}
+
+#footer a:hover {
+	text-decoration:underline;
+}
+
+
+.tabs {
+	width: 536px;
+	float: left;
+	display: inline; /* fix fo IE double-margins bug */
+}
+
+#player-panel {
+	width: 420px;
+	float: left;
+	display: inline; /* fix fo IE double-margins bug */
+}
+
+#header{
+	width: 100%;
+	overflow:hidden;     
+}
+
+
+#header img{
+	float: left;	
+	display:inline;
+	margin: 0 20px 20px 0;
+}
+
+h1 {
+	font-size:200%;
+	color: #666;
+	padding-top: 19px;
+}
+
+h2 {
+	/*margin: 0 0 -20px 0;*/
+	padding: 7px 0 27px 0;
+	font-size:120%;
+	line-height:100%;
+	color: #666;
+	background: url('graphics/arrow.gif') 10em 7px no-repeat;
+	position: relative;
+	margin-bottom: -18px;
+	z-index: 20;
+}
+
+
+.tabNavigation {
+	width: 516px;
+	overflow:hidden;
+	padding: .5em 0;
+	padding-bottom:20px;
+	margin-bottom: -13px;
+}
+
+.tabNavigation li{
+	float: left;
+	margin-right: 2px;
+}
+
+.tabNavigation li a{
+	padding: 4px 20px 4px 8px;
+	background-color:#c2d3df;
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-top-left-radius: 8px;
+	-moz-border-radius-topright: 32px;  
+	-webkit-border-top-right-radius: 32px;
+	border: 4px solid #c2d3df;
+	text-decoration:none;
+	color: #fff;
+}
+
+.tabNavigation li a.selected {
+	background-color:#dee8ef;
+	border: 4px solid #dee8ef;
+	color: #727272;
+}
+
+.tabNavigation h2 {
+	float: right;
+	margin: 0 0 -20px 0;
+	padding: 0 30px 20px 0;
+	font-size:120%;
+	line-height:100%;
+	background: url('graphics/arrow.gif') top right no-repeat;
+}
+
+.tabPage {
+	width: 492px;
+	padding:8px;
+	margin-right: 20px;
+	background-color:#dee8ef;
+	-moz-border-radius-topright: 8px;  
+	-webkit-border-top-right-radius: 8px;
+	border: 4px solid #dee8ef;
+	overflow:hidden;
+}
+
+.tab-desc {
+	width: 140px;
+	float: left;
+	display:inline;
+}
+
+.tab-desc a{
+	font-size:85%;
+	text-decoration:none;
+	color: #019be3;
+}
+
+.tab-desc a:hover{
+	text-decoration:underline;
+}
+
+
+.tracklist {
+	width: 340px;
+	margin-left: 12px;
+	float: left;
+	display:inline;
+	color: #666;
+}
+
+.track {
+	padding: 2px 12px;
+	margin: 0 ;
+	width: 316px;
+	overflow:hidden;
+}
+
+.track:hover {
+	background-color:#ecf5fd;
+}
+
+.track .title, .track .played, .track .length {
+	float: left; /* need this to make it work in IE */
+}
+
+.track .actions {
+	float:right;
+}
+
+.track a {
+	text-decoration:none;
+	font-size:.9em;
+	margin:0 4px;
+	color: #019be3;
+	padding: 0 4px;
+}
+
+.track a:hover {
+	background-color:#fff;
+}
+
+
+.track .actions span {
+	color: #bbb;
+}
+
+.current {
+	color: #019be3;	
+	border: 1px dotted #019be3;
+}
+
+.length, .played {
+	font-size: 80%;
+	color: #888;
+	padding-left: 8px;
+	line-height:175%;
+}
+
+dl {
+	width: 140px;
+	overflow:hidden;
+}
+
+dt {
+	font-style:italic;
+	color: #999;
+	border-top:1px solid #ccc;
+	font-size: 80%;
+	margin-bottom: 8px;
+	line-height:100%;
+}
+
+dd {
+	font-weight:bold;
+	font-size:1em;
+}
+
+.sleeve {
+	float: right;
+	border: 4px solid #ecf5fd;
+	margin-bottom:8px;
+	-moz-border-radius: 6px;  
+	-webkit-border-radius: 6px;
+}
+
+#clearPlayList, #shufflePlayList {
+	float: right;
+	font-size:70%;
+	display:inline;
+}
+
+#clearPlayList a, #shufflePlayList a{
+	margin:0 6px;
+	color: #019be3;
+	padding: 0 4px;
+	text-decoration:none;
+	line-height:180%;
+	border: 2px solid #fff;
+}
+
+#clearPlayList a:hover, #shufflePlayList a:hover{
+		background-color:#ededed;
+		-moz-border-radius: 6px;  
+		-webkit-border-radius: 6px;
+		border: 2px solid #ededed;
+}
+
+
+#jplayer_playlist {
+	clear: both;
+}
+
+.jp-interface dl {
+	float: right;
+	margin-top: 26px;
+	width: 328px;
+}
+
+.jp-interface dt {
+	margin-right: 10px;
+}
+
+/* @group Blue Monday overrides */
+
+div.jp-interface {
+	border: 1px solid #eee;
+	-moz-border-radius-topright: 8px;  
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;  
+	-webkit-border-top-left-radius: 8px;
+
+}
+
+div.jp-playlist ul {
+	background-color:#C2D3DF;
+	border:1px solid #C2D3DF;
+	border-bottom: 0;
+	font-size:90%;
+}
+
+div.jp-playlist-player div.jp-playlist li  {
+	border-bottom:1px dotted #ecf5fd;
+}
+
+jp-playlist-player {
+	position: relative;
+	z-index: 10px;
+}
+
+
+/* @end */
+
+
+
