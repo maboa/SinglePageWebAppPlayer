@@ -7,7 +7,14 @@
 		<link type="text/css" rel="stylesheet" href="skin/jplayer.blue.monday.css" />
 		<link type="text/css" rel="stylesheet" href="general.css" />
 
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="add2home.css">
+
+		<link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+
 
  
 		<!--[if lte IE 7]>
@@ -17,7 +24,8 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" ></script>  
 		<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
-		<script type="text/javascript" src="js/myaudio.js"></script>		
+		<script type="text/javascript" src="js/myaudio.js"></script>
+		<script type="text/javascript" src="js/add2home.js"></script>		
 		
 		
         <script type="text/javascript"> 
